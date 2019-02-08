@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View,Alert} from 'react-native';
 import FetchLocation from './components/FetchLocation';
 
 const instructions = Platform.select({
@@ -20,10 +20,17 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  userLocationHandler = () => {
+    // console.log('Button clicked!!');
+    navigator.geolocation.getCurrentPosition(pos => {
+      console.log(pos)
+    },err => console.log(err))
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <FetchLocation onGetLocation={this.getUserLocationHandler} />
+        <FetchLocation getlocation={this.userLocationHandler} />
 
         {/* <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
