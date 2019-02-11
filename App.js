@@ -27,7 +27,9 @@ export default class App extends Component<Props> {
     },err => console.log(err))
   }
 
+  
   render() {
+
     return (
       <View style={styles.container}>
         <FetchLocation getlocation={this.userLocationHandler} />
