@@ -1,0 +1,402 @@
+diff --git a/App.js b/App.js
+index a790c6a..3a22a0c 100644
+--- a/App.js
++++ b/App.js
+@@ -31,7 +31,6 @@ export default class App extends Component<Props> {
+     return (
+       <View style={styles.container}>
+         <FetchLocation getlocation={this.userLocationHandler} />
+-
+         {/* <Text style={styles.welcome}>Welcome to React Native!</Text>
+         <Text style={styles.instructions}>To get started, edit App.js</Text>
+         <Text style={styles.instructions}>{instructions}</Text> */}
+diff --git a/ios/AwesomeProject.xcodeproj/project.pbxproj b/ios/AwesomeProject.xcodeproj/project.pbxproj
+index 0b6998c..b52b66f 100644
+--- a/ios/AwesomeProject.xcodeproj/project.pbxproj
++++ b/ios/AwesomeProject.xcodeproj/project.pbxproj
+@@ -176,33 +176,19 @@
+ 			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
+ 			remoteInfo = "double-conversion-tvOS";
+ 		};
+-		2F2FA8F8220C41DE00311277 /* PBXContainerItemProxy */ = {
++		2DF0FFEA2056DD460020B375 /* PBXContainerItemProxy */ = {
+ 			isa = PBXContainerItemProxy;
+ 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+ 			proxyType = 2;
+-			remoteGlobalIDString = EDEBC6D6214B3E7000DD5AC8;
+-			remoteInfo = jsi;
++			remoteGlobalIDString = 9936F3131F5F2E4B0010BF04;
++			remoteInfo = privatedata;
+ 		};
+-		2F2FA8FA220C41DE00311277 /* PBXContainerItemProxy */ = {
++		2DF0FFEC2056DD460020B375 /* PBXContainerItemProxy */ = {
+ 			isa = PBXContainerItemProxy;
+ 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+ 			proxyType = 2;
+-			remoteGlobalIDString = EDEBC73B214B45A300DD5AC8;
+-			remoteInfo = jsiexecutor;
+-		};
+-		2F2FA8FC220C41DE00311277 /* PBXContainerItemProxy */ = {
+-			isa = PBXContainerItemProxy;
+-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+-			proxyType = 2;
+-			remoteGlobalIDString = ED296FB6214C9A0900B7C4FE;
+-			remoteInfo = "jsi-tvOS";
+-		};
+-		2F2FA8FE220C41DE00311277 /* PBXContainerItemProxy */ = {
+-			isa = PBXContainerItemProxy;
+-			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+-			proxyType = 2;
+-			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
+-			remoteInfo = "jsiexecutor-tvOS";
++			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
++			remoteInfo = "privatedata-tvOS";
+ 		};
+ 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+ 			isa = PBXContainerItemProxy;
+@@ -281,6 +267,20 @@
+ 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+ 			remoteInfo = "cxxreact-tvOS";
+ 		};
++		3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
++			isa = PBXContainerItemProxy;
++			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
++			proxyType = 2;
++			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
++			remoteInfo = jschelpers;
++		};
++		3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
++			isa = PBXContainerItemProxy;
++			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
++			proxyType = 2;
++			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
++			remoteInfo = "jschelpers-tvOS";
++		};
+ 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
+ 			isa = PBXContainerItemProxy;
+ 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+@@ -507,16 +507,16 @@
+ 				3DAD3EA71DF850E9000B6D8A /* libyoga.a */,
+ 				3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */,
+ 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
++				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
++				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
+ 				2DF0FFDF2056DD460020B375 /* libjsinspector.a */,
+ 				2DF0FFE12056DD460020B375 /* libjsinspector-tvOS.a */,
+ 				2DF0FFE32056DD460020B375 /* libthird-party.a */,
+ 				2DF0FFE52056DD460020B375 /* libthird-party.a */,
+ 				2DF0FFE72056DD460020B375 /* libdouble-conversion.a */,
+ 				2DF0FFE92056DD460020B375 /* libdouble-conversion.a */,
+-				2F2FA8F9220C41DE00311277 /* libjsi.a */,
+-				2F2FA8FB220C41DE00311277 /* libjsiexecutor.a */,
+-				2F2FA8FD220C41DE00311277 /* libjsi-tvOS.a */,
+-				2F2FA8FF220C41DE00311277 /* libjsiexecutor-tvOS.a */,
++				2DF0FFEB2056DD460020B375 /* libprivatedata.a */,
++				2DF0FFED2056DD460020B375 /* libprivatedata-tvOS.a */,
+ 			);
+ 			name = Products;
+ 			sourceTree = "<group>";
+@@ -901,32 +901,18 @@
+ 			remoteRef = 2DF0FFE82056DD460020B375 /* PBXContainerItemProxy */;
+ 			sourceTree = BUILT_PRODUCTS_DIR;
+ 		};
+-		2F2FA8F9220C41DE00311277 /* libjsi.a */ = {
++		2DF0FFEB2056DD460020B375 /* libprivatedata.a */ = {
+ 			isa = PBXReferenceProxy;
+ 			fileType = archive.ar;
+-			path = libjsi.a;
+-			remoteRef = 2F2FA8F8220C41DE00311277 /* PBXContainerItemProxy */;
++			path = libprivatedata.a;
++			remoteRef = 2DF0FFEA2056DD460020B375 /* PBXContainerItemProxy */;
+ 			sourceTree = BUILT_PRODUCTS_DIR;
+ 		};
+-		2F2FA8FB220C41DE00311277 /* libjsiexecutor.a */ = {
++		2DF0FFED2056DD460020B375 /* libprivatedata-tvOS.a */ = {
+ 			isa = PBXReferenceProxy;
+ 			fileType = archive.ar;
+-			path = libjsiexecutor.a;
+-			remoteRef = 2F2FA8FA220C41DE00311277 /* PBXContainerItemProxy */;
+-			sourceTree = BUILT_PRODUCTS_DIR;
+-		};
+-		2F2FA8FD220C41DE00311277 /* libjsi-tvOS.a */ = {
+-			isa = PBXReferenceProxy;
+-			fileType = archive.ar;
+-			path = "libjsi-tvOS.a";
+-			remoteRef = 2F2FA8FC220C41DE00311277 /* PBXContainerItemProxy */;
+-			sourceTree = BUILT_PRODUCTS_DIR;
+-		};
+-		2F2FA8FF220C41DE00311277 /* libjsiexecutor-tvOS.a */ = {
+-			isa = PBXReferenceProxy;
+-			fileType = archive.ar;
+-			path = "libjsiexecutor-tvOS.a";
+-			remoteRef = 2F2FA8FE220C41DE00311277 /* PBXContainerItemProxy */;
++			path = "libprivatedata-tvOS.a";
++			remoteRef = 2DF0FFEC2056DD460020B375 /* PBXContainerItemProxy */;
+ 			sourceTree = BUILT_PRODUCTS_DIR;
+ 		};
+ 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
+@@ -1006,6 +992,20 @@
+ 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+ 			sourceTree = BUILT_PRODUCTS_DIR;
+ 		};
++		3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */ = {
++			isa = PBXReferenceProxy;
++			fileType = archive.ar;
++			path = libjschelpers.a;
++			remoteRef = 3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */;
++			sourceTree = BUILT_PRODUCTS_DIR;
++		};
++		3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */ = {
++			isa = PBXReferenceProxy;
++			fileType = archive.ar;
++			path = libjschelpers.a;
++			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
++			sourceTree = BUILT_PRODUCTS_DIR;
++		};
+ 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
+ 			isa = PBXReferenceProxy;
+ 			fileType = archive.ar;
+@@ -1458,7 +1458,7 @@
+ 				00E356F71AD99517003FC87E /* Release */,
+ 			);
+ 			defaultConfigurationIsVisible = 0;
+-			defaultConfigurationName = Debug;
++			defaultConfigurationName = Release;
+ 		};
+ 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AwesomeProject" */ = {
+ 			isa = XCConfigurationList;
+@@ -1467,7 +1467,7 @@
+ 				13B07F951A680F5B00A75B9A /* Release */,
+ 			);
+ 			defaultConfigurationIsVisible = 0;
+-			defaultConfigurationName = Debug;
++			defaultConfigurationName = Release;
+ 		};
+ 		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "AwesomeProject-tvOS" */ = {
+ 			isa = XCConfigurationList;
+@@ -1476,7 +1476,7 @@
+ 				2D02E4981E0B4A5E006451C7 /* Release */,
+ 			);
+ 			defaultConfigurationIsVisible = 0;
+-			defaultConfigurationName = Debug;
++			defaultConfigurationName = Release;
+ 		};
+ 		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "AwesomeProject-tvOSTests" */ = {
+ 			isa = XCConfigurationList;
+@@ -1485,7 +1485,7 @@
+ 				2D02E49A1E0B4A5E006451C7 /* Release */,
+ 			);
+ 			defaultConfigurationIsVisible = 0;
+-			defaultConfigurationName = Debug;
++			defaultConfigurationName = Release;
+ 		};
+ 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AwesomeProject" */ = {
+ 			isa = XCConfigurationList;
+@@ -1494,7 +1494,7 @@
+ 				83CBBA211A601CBA00E9B192 /* Release */,
+ 			);
+ 			defaultConfigurationIsVisible = 0;
+-			defaultConfigurationName = Debug;
++			defaultConfigurationName = Release;
+ 		};
+ /* End XCConfigurationList section */
+ 	};
+diff --git a/ios/Index/DataStore/v5/units/AppDelegate.o-2ROLV0OSDIQ9W b/ios/Index/DataStore/v5/units/AppDelegate.o-2ROLV0OSDIQ9W
+index 3d18f0e..2af5d7b 100644
+Binary files a/ios/Index/DataStore/v5/units/AppDelegate.o-2ROLV0OSDIQ9W and b/ios/Index/DataStore/v5/units/AppDelegate.o-2ROLV0OSDIQ9W differ
+diff --git a/ios/Index/DataStore/v5/units/AppDelegate.o-2V75D4YLXR16K b/ios/Index/DataStore/v5/units/AppDelegate.o-2V75D4YLXR16K
+index 92f9efe..ec51397 100644
+Binary files a/ios/Index/DataStore/v5/units/AppDelegate.o-2V75D4YLXR16K and b/ios/Index/DataStore/v5/units/AppDelegate.o-2V75D4YLXR16K differ
+diff --git a/ios/Index/DataStore/v5/units/Assume.o-13MZNN8VF34MG b/ios/Index/DataStore/v5/units/Assume.o-13MZNN8VF34MG
+index 485bebf..165022b 100644
+Binary files a/ios/Index/DataStore/v5/units/Assume.o-13MZNN8VF34MG and b/ios/Index/DataStore/v5/units/Assume.o-13MZNN8VF34MG differ
+diff --git a/ios/Index/DataStore/v5/units/Assume.o-3FYIC89T9XHGZ b/ios/Index/DataStore/v5/units/Assume.o-3FYIC89T9XHGZ
+index 87c8da4..66696c6 100644
+Binary files a/ios/Index/DataStore/v5/units/Assume.o-3FYIC89T9XHGZ and b/ios/Index/DataStore/v5/units/Assume.o-3FYIC89T9XHGZ differ
+diff --git a/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2QRBL2GMEWB31 b/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2QRBL2GMEWB31
+index 7ebb68f..1d4c05d 100644
+Binary files a/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2QRBL2GMEWB31 and b/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2QRBL2GMEWB31 differ
+diff --git a/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2RXN1C7YOZVTA b/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2RXN1C7YOZVTA
+index 3f541db..3ec2091 100644
+Binary files a/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2RXN1C7YOZVTA and b/ios/Index/DataStore/v5/units/AwesomeProjectTests.o-2RXN1C7YOZVTA differ
+diff --git a/ios/Index/DataStore/v5/units/Conv.o-21BO3CIBMAIS5 b/ios/Index/DataStore/v5/units/Conv.o-21BO3CIBMAIS5
+index cc8f9e7..4a6f916 100644
+Binary files a/ios/Index/DataStore/v5/units/Conv.o-21BO3CIBMAIS5 and b/ios/Index/DataStore/v5/units/Conv.o-21BO3CIBMAIS5 differ
+diff --git a/ios/Index/DataStore/v5/units/Conv.o-9LYUW4CTS189 b/ios/Index/DataStore/v5/units/Conv.o-9LYUW4CTS189
+index 2a09569..13e82ba 100644
+Binary files a/ios/Index/DataStore/v5/units/Conv.o-9LYUW4CTS189 and b/ios/Index/DataStore/v5/units/Conv.o-9LYUW4CTS189 differ
+diff --git a/ios/Index/DataStore/v5/units/CxxNativeModule.o-306NM4LZTKN2G b/ios/Index/DataStore/v5/units/CxxNativeModule.o-306NM4LZTKN2G
+index 7eed9a8..f54b0b1 100644
+Binary files a/ios/Index/DataStore/v5/units/CxxNativeModule.o-306NM4LZTKN2G and b/ios/Index/DataStore/v5/units/CxxNativeModule.o-306NM4LZTKN2G differ
+diff --git a/ios/Index/DataStore/v5/units/CxxNativeModule.o-3ZZRJ03HJERA b/ios/Index/DataStore/v5/units/CxxNativeModule.o-3ZZRJ03HJERA
+index 752cc2d..cac63ea 100644
+Binary files a/ios/Index/DataStore/v5/units/CxxNativeModule.o-3ZZRJ03HJERA and b/ios/Index/DataStore/v5/units/CxxNativeModule.o-3ZZRJ03HJERA differ
+diff --git a/ios/Index/DataStore/v5/units/Format.o-25F0FFFH7PGI b/ios/Index/DataStore/v5/units/Format.o-25F0FFFH7PGI
+index f72bde3..75f296f 100644
+Binary files a/ios/Index/DataStore/v5/units/Format.o-25F0FFFH7PGI and b/ios/Index/DataStore/v5/units/Format.o-25F0FFFH7PGI differ
+diff --git a/ios/Index/DataStore/v5/units/Format.o-3SP938RQBHBZH b/ios/Index/DataStore/v5/units/Format.o-3SP938RQBHBZH
+index 8036b65..37a69a3 100644
+Binary files a/ios/Index/DataStore/v5/units/Format.o-3SP938RQBHBZH and b/ios/Index/DataStore/v5/units/Format.o-3SP938RQBHBZH differ
+diff --git a/ios/Index/DataStore/v5/units/Instance.o-2GPPZQRE1B4FT b/ios/Index/DataStore/v5/units/Instance.o-2GPPZQRE1B4FT
+index c16582e..d1517be 100644
+Binary files a/ios/Index/DataStore/v5/units/Instance.o-2GPPZQRE1B4FT and b/ios/Index/DataStore/v5/units/Instance.o-2GPPZQRE1B4FT differ
+diff --git a/ios/Index/DataStore/v5/units/Instance.o-2Q0FNHAJZ3ZKG b/ios/Index/DataStore/v5/units/Instance.o-2Q0FNHAJZ3ZKG
+index 3ed2e9c..7fdfeaf 100644
+Binary files a/ios/Index/DataStore/v5/units/Instance.o-2Q0FNHAJZ3ZKG and b/ios/Index/DataStore/v5/units/Instance.o-2Q0FNHAJZ3ZKG differ
+diff --git a/ios/Index/DataStore/v5/units/JSBigString.o-2Y15WCADYM46 b/ios/Index/DataStore/v5/units/JSBigString.o-2Y15WCADYM46
+index a43ff7f..8ddd26d 100644
+Binary files a/ios/Index/DataStore/v5/units/JSBigString.o-2Y15WCADYM46 and b/ios/Index/DataStore/v5/units/JSBigString.o-2Y15WCADYM46 differ
+diff --git a/ios/Index/DataStore/v5/units/JSBigString.o-37RIJ1XLB9CC5 b/ios/Index/DataStore/v5/units/JSBigString.o-37RIJ1XLB9CC5
+index 51c2a0f..fd647af 100644
+Binary files a/ios/Index/DataStore/v5/units/JSBigString.o-37RIJ1XLB9CC5 and b/ios/Index/DataStore/v5/units/JSBigString.o-37RIJ1XLB9CC5 differ
+diff --git a/ios/Index/DataStore/v5/units/JSExecutor.o-1FETGA60LP6Z2 b/ios/Index/DataStore/v5/units/JSExecutor.o-1FETGA60LP6Z2
+index 582caad..05e66a1 100644
+Binary files a/ios/Index/DataStore/v5/units/JSExecutor.o-1FETGA60LP6Z2 and b/ios/Index/DataStore/v5/units/JSExecutor.o-1FETGA60LP6Z2 differ
+diff --git a/ios/Index/DataStore/v5/units/JSExecutor.o-Z9NAE1LVM6Q6 b/ios/Index/DataStore/v5/units/JSExecutor.o-Z9NAE1LVM6Q6
+index 96712a2..a53d4fd 100644
+Binary files a/ios/Index/DataStore/v5/units/JSExecutor.o-Z9NAE1LVM6Q6 and b/ios/Index/DataStore/v5/units/JSExecutor.o-Z9NAE1LVM6Q6 differ
+diff --git a/ios/Index/DataStore/v5/units/JSIDynamic.o-17FCMJ1FV21J1 b/ios/Index/DataStore/v5/units/JSIDynamic.o-17FCMJ1FV21J1
+index 7c04b8b..4392b70 100644
+Binary files a/ios/Index/DataStore/v5/units/JSIDynamic.o-17FCMJ1FV21J1 and b/ios/Index/DataStore/v5/units/JSIDynamic.o-17FCMJ1FV21J1 differ
+diff --git a/ios/Index/DataStore/v5/units/JSIDynamic.o-18GKSBFS8ELEP b/ios/Index/DataStore/v5/units/JSIDynamic.o-18GKSBFS8ELEP
+index 9236f58..383f488 100644
+Binary files a/ios/Index/DataStore/v5/units/JSIDynamic.o-18GKSBFS8ELEP and b/ios/Index/DataStore/v5/units/JSIDynamic.o-18GKSBFS8ELEP differ
+diff --git a/ios/Index/DataStore/v5/units/JSIExecutor.o-1Y035EVCKUVV2 b/ios/Index/DataStore/v5/units/JSIExecutor.o-1Y035EVCKUVV2
+index fe64a4a..5671047 100644
+Binary files a/ios/Index/DataStore/v5/units/JSIExecutor.o-1Y035EVCKUVV2 and b/ios/Index/DataStore/v5/units/JSIExecutor.o-1Y035EVCKUVV2 differ
+diff --git a/ios/Index/DataStore/v5/units/JSIExecutor.o-3SF1UX12IOOFD b/ios/Index/DataStore/v5/units/JSIExecutor.o-3SF1UX12IOOFD
+index 20a33dd..1b22bc1 100644
+Binary files a/ios/Index/DataStore/v5/units/JSIExecutor.o-3SF1UX12IOOFD and b/ios/Index/DataStore/v5/units/JSIExecutor.o-3SF1UX12IOOFD differ
+diff --git a/ios/Index/DataStore/v5/units/MethodCall.o-1BGVUCSKSQ2QJ b/ios/Index/DataStore/v5/units/MethodCall.o-1BGVUCSKSQ2QJ
+index c88e550..50b6af5 100644
+Binary files a/ios/Index/DataStore/v5/units/MethodCall.o-1BGVUCSKSQ2QJ and b/ios/Index/DataStore/v5/units/MethodCall.o-1BGVUCSKSQ2QJ differ
+diff --git a/ios/Index/DataStore/v5/units/MethodCall.o-36JNQ0CFYP816 b/ios/Index/DataStore/v5/units/MethodCall.o-36JNQ0CFYP816
+index 4f656ee..add613c 100644
+Binary files a/ios/Index/DataStore/v5/units/MethodCall.o-36JNQ0CFYP816 and b/ios/Index/DataStore/v5/units/MethodCall.o-36JNQ0CFYP816 differ
+diff --git a/ios/Index/DataStore/v5/units/ModuleRegistry.o-1Z5BH9UO05YCH b/ios/Index/DataStore/v5/units/ModuleRegistry.o-1Z5BH9UO05YCH
+index 175b424..ad51190 100644
+Binary files a/ios/Index/DataStore/v5/units/ModuleRegistry.o-1Z5BH9UO05YCH and b/ios/Index/DataStore/v5/units/ModuleRegistry.o-1Z5BH9UO05YCH differ
+diff --git a/ios/Index/DataStore/v5/units/ModuleRegistry.o-2YQLU80J1I7GK b/ios/Index/DataStore/v5/units/ModuleRegistry.o-2YQLU80J1I7GK
+index 11cee4a..54c807c 100644
+Binary files a/ios/Index/DataStore/v5/units/ModuleRegistry.o-2YQLU80J1I7GK and b/ios/Index/DataStore/v5/units/ModuleRegistry.o-2YQLU80J1I7GK differ
+diff --git a/ios/Index/DataStore/v5/units/NativeToJsBridge.o-2E65I7DC15OHH b/ios/Index/DataStore/v5/units/NativeToJsBridge.o-2E65I7DC15OHH
+index eb92aef..9720af6 100644
+Binary files a/ios/Index/DataStore/v5/units/NativeToJsBridge.o-2E65I7DC15OHH and b/ios/Index/DataStore/v5/units/NativeToJsBridge.o-2E65I7DC15OHH differ
+diff --git a/ios/Index/DataStore/v5/units/NativeToJsBridge.o-3NROK9IKUXA6D b/ios/Index/DataStore/v5/units/NativeToJsBridge.o-3NROK9IKUXA6D
+index ae88619..79e92b0 100644
+Binary files a/ios/Index/DataStore/v5/units/NativeToJsBridge.o-3NROK9IKUXA6D and b/ios/Index/DataStore/v5/units/NativeToJsBridge.o-3NROK9IKUXA6D differ
+diff --git a/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-1588Q9VK06T3W b/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-1588Q9VK06T3W
+index 6e0ac9e..59e272e 100644
+Binary files a/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-1588Q9VK06T3W and b/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-1588Q9VK06T3W differ
+diff --git a/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-3V9XX7ISVLZUN b/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-3V9XX7ISVLZUN
+index e1f82c3..86b06df 100644
+Binary files a/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-3V9XX7ISVLZUN and b/ios/Index/DataStore/v5/units/RAMBundleRegistry.o-3V9XX7ISVLZUN differ
+diff --git a/ios/Index/DataStore/v5/units/RCTFollyConvert.o-10X6HSE9AJJYL b/ios/Index/DataStore/v5/units/RCTFollyConvert.o-10X6HSE9AJJYL
+index 9433571..1b1dd00 100644
+Binary files a/ios/Index/DataStore/v5/units/RCTFollyConvert.o-10X6HSE9AJJYL and b/ios/Index/DataStore/v5/units/RCTFollyConvert.o-10X6HSE9AJJYL differ
+diff --git a/ios/Index/DataStore/v5/units/RCTFollyConvert.o-1X4LD11ZJVNV5 b/ios/Index/DataStore/v5/units/RCTFollyConvert.o-1X4LD11ZJVNV5
+index 1fb52ed..ba5002f 100644
+Binary files a/ios/Index/DataStore/v5/units/RCTFollyConvert.o-1X4LD11ZJVNV5 and b/ios/Index/DataStore/v5/units/RCTFollyConvert.o-1X4LD11ZJVNV5 differ
+diff --git a/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-12FFYQ9UK4H89 b/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-12FFYQ9UK4H89
+index 24ec12f..1829f50 100644
+Binary files a/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-12FFYQ9UK4H89 and b/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-12FFYQ9UK4H89 differ
+diff --git a/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-TO8HB865CGHK b/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-TO8HB865CGHK
+index 1892977..e3532ec 100644
+Binary files a/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-TO8HB865CGHK and b/ios/Index/DataStore/v5/units/RCTObjcExecutor.o-TO8HB865CGHK differ
+diff --git a/ios/Index/DataStore/v5/units/SampleCxxModule.o-29OTY9BDAD6MK b/ios/Index/DataStore/v5/units/SampleCxxModule.o-29OTY9BDAD6MK
+index 5909e60..39fa7ff 100644
+Binary files a/ios/Index/DataStore/v5/units/SampleCxxModule.o-29OTY9BDAD6MK and b/ios/Index/DataStore/v5/units/SampleCxxModule.o-29OTY9BDAD6MK differ
+diff --git a/ios/Index/DataStore/v5/units/SampleCxxModule.o-2GCAJZQ7TZCLO b/ios/Index/DataStore/v5/units/SampleCxxModule.o-2GCAJZQ7TZCLO
+index 5fce215..efdc07a 100644
+Binary files a/ios/Index/DataStore/v5/units/SampleCxxModule.o-2GCAJZQ7TZCLO and b/ios/Index/DataStore/v5/units/SampleCxxModule.o-2GCAJZQ7TZCLO differ
+diff --git a/ios/Index/DataStore/v5/units/String.o-2R4CV7FRLVYNX b/ios/Index/DataStore/v5/units/String.o-2R4CV7FRLVYNX
+index f749d21..cdefdee 100644
+Binary files a/ios/Index/DataStore/v5/units/String.o-2R4CV7FRLVYNX and b/ios/Index/DataStore/v5/units/String.o-2R4CV7FRLVYNX differ
+diff --git a/ios/Index/DataStore/v5/units/String.o-2ZL2O9AMXVYSC b/ios/Index/DataStore/v5/units/String.o-2ZL2O9AMXVYSC
+index b0c5771..c1b3048 100644
+Binary files a/ios/Index/DataStore/v5/units/String.o-2ZL2O9AMXVYSC and b/ios/Index/DataStore/v5/units/String.o-2ZL2O9AMXVYSC differ
+diff --git a/ios/Index/DataStore/v5/units/Unicode.o-1CL1F5WZJSY79 b/ios/Index/DataStore/v5/units/Unicode.o-1CL1F5WZJSY79
+index 17345ea..fff6e45 100644
+Binary files a/ios/Index/DataStore/v5/units/Unicode.o-1CL1F5WZJSY79 and b/ios/Index/DataStore/v5/units/Unicode.o-1CL1F5WZJSY79 differ
+diff --git a/ios/Index/DataStore/v5/units/Unicode.o-2GYQ8HRBGIUUP b/ios/Index/DataStore/v5/units/Unicode.o-2GYQ8HRBGIUUP
+index 77f731b..faf0f26 100644
+Binary files a/ios/Index/DataStore/v5/units/Unicode.o-2GYQ8HRBGIUUP and b/ios/Index/DataStore/v5/units/Unicode.o-2GYQ8HRBGIUUP differ
+diff --git a/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-31IR6A1GRINY0 b/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-31IR6A1GRINY0
+index e3300a9..7c77fc8 100644
+Binary files a/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-31IR6A1GRINY0 and b/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-31IR6A1GRINY0 differ
+diff --git a/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-3IMT8VB1AE270 b/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-3IMT8VB1AE270
+index 83ed6ee..6c1aa46 100644
+Binary files a/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-3IMT8VB1AE270 and b/ios/Index/DataStore/v5/units/demangle-01b002db5441ca9b93c15ee85d5d83e9c67a869564183b68ceff63bc9453d1d1.o-3IMT8VB1AE270 differ
+diff --git a/ios/Index/DataStore/v5/units/dynamic.o-1W9MRNQLBS8PA b/ios/Index/DataStore/v5/units/dynamic.o-1W9MRNQLBS8PA
+index 91e0bea..f4fb7ef 100644
+Binary files a/ios/Index/DataStore/v5/units/dynamic.o-1W9MRNQLBS8PA and b/ios/Index/DataStore/v5/units/dynamic.o-1W9MRNQLBS8PA differ
+diff --git a/ios/Index/DataStore/v5/units/dynamic.o-3M58RAUTFASXU b/ios/Index/DataStore/v5/units/dynamic.o-3M58RAUTFASXU
+index d2b6e9c..8dd07b8 100644
+Binary files a/ios/Index/DataStore/v5/units/dynamic.o-3M58RAUTFASXU and b/ios/Index/DataStore/v5/units/dynamic.o-3M58RAUTFASXU differ
+diff --git a/ios/Index/DataStore/v5/units/json.o-1MU4CFZKCSE3 b/ios/Index/DataStore/v5/units/json.o-1MU4CFZKCSE3
+index bffc6ef..4880642 100644
+Binary files a/ios/Index/DataStore/v5/units/json.o-1MU4CFZKCSE3 and b/ios/Index/DataStore/v5/units/json.o-1MU4CFZKCSE3 differ
+diff --git a/ios/Index/DataStore/v5/units/json.o-22LS8DJF6S6WO b/ios/Index/DataStore/v5/units/json.o-22LS8DJF6S6WO
+index e870440..396eba6 100644
+Binary files a/ios/Index/DataStore/v5/units/json.o-22LS8DJF6S6WO and b/ios/Index/DataStore/v5/units/json.o-22LS8DJF6S6WO differ
+diff --git a/ios/Index/DataStore/v5/units/json_pointer.o-2KE95VWZI6NVZ b/ios/Index/DataStore/v5/units/json_pointer.o-2KE95VWZI6NVZ
+index e34327d..4b77769 100644
+Binary files a/ios/Index/DataStore/v5/units/json_pointer.o-2KE95VWZI6NVZ and b/ios/Index/DataStore/v5/units/json_pointer.o-2KE95VWZI6NVZ differ
+diff --git a/ios/Index/DataStore/v5/units/json_pointer.o-2XPJXXGPATWIA b/ios/Index/DataStore/v5/units/json_pointer.o-2XPJXXGPATWIA
+index 16f303a..aae7be6 100644
+Binary files a/ios/Index/DataStore/v5/units/json_pointer.o-2XPJXXGPATWIA and b/ios/Index/DataStore/v5/units/json_pointer.o-2XPJXXGPATWIA differ
+diff --git a/ios/Index/DataStore/v5/units/logging.o-3OOJ721MZCI3Q b/ios/Index/DataStore/v5/units/logging.o-3OOJ721MZCI3Q
+index 0d2b1be..1f20ff1 100644
+Binary files a/ios/Index/DataStore/v5/units/logging.o-3OOJ721MZCI3Q and b/ios/Index/DataStore/v5/units/logging.o-3OOJ721MZCI3Q differ
+diff --git a/ios/Index/DataStore/v5/units/logging.o-6B69WJOF392D b/ios/Index/DataStore/v5/units/logging.o-6B69WJOF392D
+index d0d1037..fe76116 100644
+Binary files a/ios/Index/DataStore/v5/units/logging.o-6B69WJOF392D and b/ios/Index/DataStore/v5/units/logging.o-6B69WJOF392D differ
+diff --git a/ios/Index/DataStore/v5/units/main.o-1AF29RB6G9CSQ b/ios/Index/DataStore/v5/units/main.o-1AF29RB6G9CSQ
+index 80e0317..1a483b5 100644
+Binary files a/ios/Index/DataStore/v5/units/main.o-1AF29RB6G9CSQ and b/ios/Index/DataStore/v5/units/main.o-1AF29RB6G9CSQ differ
+diff --git a/ios/Index/DataStore/v5/units/main.o-2U4CCQPK00GPF b/ios/Index/DataStore/v5/units/main.o-2U4CCQPK00GPF
+index a508831..ef13b47 100644
+Binary files a/ios/Index/DataStore/v5/units/main.o-2U4CCQPK00GPF and b/ios/Index/DataStore/v5/units/main.o-2U4CCQPK00GPF differ
+diff --git a/ios/Index/DataStore/v5/units/raw_logging.o-15L927SILZ0TR b/ios/Index/DataStore/v5/units/raw_logging.o-15L927SILZ0TR
+index 09573d2..e9fc8ec 100644
+Binary files a/ios/Index/DataStore/v5/units/raw_logging.o-15L927SILZ0TR and b/ios/Index/DataStore/v5/units/raw_logging.o-15L927SILZ0TR differ
+diff --git a/ios/Index/DataStore/v5/units/raw_logging.o-17GWK485GXPGQ b/ios/Index/DataStore/v5/units/raw_logging.o-17GWK485GXPGQ
+index b9ffe9f..b09ebf0 100644
+Binary files a/ios/Index/DataStore/v5/units/raw_logging.o-17GWK485GXPGQ and b/ios/Index/DataStore/v5/units/raw_logging.o-17GWK485GXPGQ differ
+diff --git a/ios/Index/DataStore/v5/units/signalhandler.o-2WI167MIC98MH b/ios/Index/DataStore/v5/units/signalhandler.o-2WI167MIC98MH
+index 9475008..d57b4d4 100644
+Binary files a/ios/Index/DataStore/v5/units/signalhandler.o-2WI167MIC98MH and b/ios/Index/DataStore/v5/units/signalhandler.o-2WI167MIC98MH differ
+diff --git a/ios/Index/DataStore/v5/units/signalhandler.o-3HX7JXKUBMABW b/ios/Index/DataStore/v5/units/signalhandler.o-3HX7JXKUBMABW
+index a5bf283..38712dc 100644
+Binary files a/ios/Index/DataStore/v5/units/signalhandler.o-3HX7JXKUBMABW and b/ios/Index/DataStore/v5/units/signalhandler.o-3HX7JXKUBMABW differ
+diff --git a/ios/Index/DataStore/v5/units/symbolize.o-1Q7X2EUO3W9VK b/ios/Index/DataStore/v5/units/symbolize.o-1Q7X2EUO3W9VK
+index 5435040..87b2f77 100644
+Binary files a/ios/Index/DataStore/v5/units/symbolize.o-1Q7X2EUO3W9VK and b/ios/Index/DataStore/v5/units/symbolize.o-1Q7X2EUO3W9VK differ
+diff --git a/ios/Index/DataStore/v5/units/symbolize.o-R32XSCFFC4OY b/ios/Index/DataStore/v5/units/symbolize.o-R32XSCFFC4OY
+index 01b5003..454c645 100644
+Binary files a/ios/Index/DataStore/v5/units/symbolize.o-R32XSCFFC4OY and b/ios/Index/DataStore/v5/units/symbolize.o-R32XSCFFC4OY differ
+diff --git a/ios/Index/DataStore/v5/units/utilities.o-2ES91CHKTUAVC b/ios/Index/DataStore/v5/units/utilities.o-2ES91CHKTUAVC
+index d9d4516..9a0cef9 100644
+Binary files a/ios/Index/DataStore/v5/units/utilities.o-2ES91CHKTUAVC and b/ios/Index/DataStore/v5/units/utilities.o-2ES91CHKTUAVC differ
+diff --git a/ios/Index/DataStore/v5/units/utilities.o-32UDRCBG52EIA b/ios/Index/DataStore/v5/units/utilities.o-32UDRCBG52EIA
+index b9be19c..0128061 100644
+Binary files a/ios/Index/DataStore/v5/units/utilities.o-32UDRCBG52EIA and b/ios/Index/DataStore/v5/units/utilities.o-32UDRCBG52EIA differ
+diff --git a/ios/Index/DataStore/v5/units/vlog_is_on.o-1KWSJG096NP3T b/ios/Index/DataStore/v5/units/vlog_is_on.o-1KWSJG096NP3T
+index e403006..e20d0bb 100644
+Binary files a/ios/Index/DataStore/v5/units/vlog_is_on.o-1KWSJG096NP3T and b/ios/Index/DataStore/v5/units/vlog_is_on.o-1KWSJG096NP3T differ
+diff --git a/ios/Index/DataStore/v5/units/vlog_is_on.o-28X17XIEZCMRV b/ios/Index/DataStore/v5/units/vlog_is_on.o-28X17XIEZCMRV
+index 943df51..7f05f08 100644
+Binary files a/ios/Index/DataStore/v5/units/vlog_is_on.o-28X17XIEZCMRV and b/ios/Index/DataStore/v5/units/vlog_is_on.o-28X17XIEZCMRV differ
+diff --git a/package.json b/package.json
+index e3caa82..1a74127 100644
+--- a/package.json
++++ b/package.json
+@@ -8,7 +8,7 @@
+   },
+   "dependencies": {
+     "react": "16.6.3",
+-    "react-native": "0.58.4",
++    "react-native": "^0.58.4",
+     "react-native-maps": "^0.23.0"
+   },
+   "devDependencies": {
